@@ -9,14 +9,14 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltViewModel
-class CiudadViewModel @Inject constructor(
-    private val getCiudadUseCase: GetCiudadUseCase
+@HiltViewModel //Esto genera el codigo por detras para poder preparar e injectar en un viewModel
+class CiudadViewModel @Inject constructor( // Preparado
+    private val getCiudadUseCase: GetCiudadUseCase // Se injecta el caso de uso
 ) : ViewModel() {
 
     val modeloCiudad = MutableLiveData<CiudadItem>()
     val cargando = MutableLiveData<Boolean>()
-    val ciudad = CiudadItem(1, "No hay datos", 0)
+    val ciudad = CiudadItem(1, "No hay datos", 0) //Datos para indicar que esta vacio
 
     fun onCreate() {
         viewModelScope.launch {
@@ -24,9 +24,11 @@ class CiudadViewModel @Inject constructor(
             val resultado = getCiudadUseCase()
 
             if(!resultado.isEmpty()){
+                //Aun no se lista todo con recyclerView
                 modeloCiudad.postValue(resultado[0])
                 cargando.postValue(false)
             }else{
+                //Se le asigna datos por defecto, mas que todo para indicar la falta de datos
                 modeloCiudad.postValue(ciudad)
                 cargando.postValue(false)
             }

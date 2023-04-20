@@ -7,4 +7,5 @@ data class CiudadItem(
     val nombre: String,
     val poblacion: Int
 )
-fun CiudadEntity.toDomain() = CiudadItem(id, nombre, poblacion)
+fun CiudadEntity.toDomain() = CiudadItem(id, nombre, poblacion) //Esto es un mapper, se usa para mapear distintas data class con datos similares
+//mapper cambia el diseño de la clase para adaptarse a otra

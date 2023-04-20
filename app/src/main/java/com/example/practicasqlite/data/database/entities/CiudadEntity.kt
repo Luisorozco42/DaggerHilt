@@ -8,7 +8,7 @@ import com.example.practicasqlite.domain.model.CiudadItem
 @Entity("tblCiudad")
 data class CiudadEntity(
 
-    @PrimaryKey(autoGenerate = true)  @ColumnInfo("idC") val id : Int = 0,
+    @PrimaryKey(autoGenerate = true)  @ColumnInfo("idC") val id : Int = 0, //Asi se crea una tabla con room
     @ColumnInfo("nombreCiudad") val nombre: String,
     @ColumnInfo("poblacion") val poblacion: Int = 0
 )

@@ -7,7 +7,7 @@ import com.example.practicasqlite.databinding.ActivityMainBinding
 import com.example.practicasqlite.ui.viewmodel.CiudadViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+@AndroidEntryPoint //Gracias a esto dagger Hilt se encarga de crear todo el codigo por detras, y prepara la clase para poder injectar a otras
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

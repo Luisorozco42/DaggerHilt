@@ -7,6 +7,6 @@ import javax.inject.Inject
 class GetCiudadUseCase @Inject constructor (private val repository: CiudadRepository) {
 
     suspend operator fun invoke(): List<CiudadItem>{
-        return repository.getAllCitiesFromDB()
+        return repository.getAllCitiesFromDB() //De esta manera se obtienen toda la info de la bd
     }
 }

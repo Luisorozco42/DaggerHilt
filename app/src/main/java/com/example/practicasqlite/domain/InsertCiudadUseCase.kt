@@ -8,6 +8,6 @@ import javax.inject.Inject
 class InsertCiudadUseCase @Inject constructor(private val repository: CiudadRepository) {
 
     suspend fun insertCiudad(ciudadItem: CiudadItem){
-        repository.insertCity(ciudadItem.toDatabase())
+        repository.insertCity(ciudadItem.toDatabase()) //Se utiliza mapper para cambiar a la version de insercion
     }
 }
