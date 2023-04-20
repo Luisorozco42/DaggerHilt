@@ -16,7 +16,7 @@ class CiudadViewModel @Inject constructor(
 
     val modeloCiudad = MutableLiveData<CiudadItem>()
     val cargando = MutableLiveData<Boolean>()
-    val ciudad = CiudadItem(1, "Managua", 9000)
+    val ciudad = CiudadItem(1, "No hay datos", 0)
 
     fun onCreate() {
         viewModelScope.launch {
