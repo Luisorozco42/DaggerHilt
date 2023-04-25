@@ -14,22 +14,23 @@ class CiudadViewModel @Inject constructor( // Preparado
     private val getCiudadUseCase: GetCiudadUseCase // Se injecta el caso de uso
 ) : ViewModel() {
 
-    val modeloCiudad = MutableLiveData<CiudadItem>()
+    val modeloCiudad = MutableLiveData<List<CiudadItem>>()
     val cargando = MutableLiveData<Boolean>()
-    val ciudad = CiudadItem(1, "No hay datos", 0) //Datos para indicar que esta vacio
+    val ciudad = CiudadItem(0, "No hay datos", 0) //Datos para indicar que esta vacio
 
     fun onCreate() {
         viewModelScope.launch {
             cargando.postValue(true)
-            val resultado = getCiudadUseCase()
+            var resultado = getCiudadUseCase()
 
             if(!resultado.isEmpty()){
                 //Aun no se lista todo con recyclerView
-                modeloCiudad.postValue(resultado[0])
+                modeloCiudad.postValue(resultado)
                 cargando.postValue(false)
             }else{
                 //Se le asigna datos por defecto, mas que todo para indicar la falta de datos
-                modeloCiudad.postValue(ciudad)
+                resultado = listOf(ciudad)
+                modeloCiudad.postValue(resultado)
                 cargando.postValue(false)
             }
         }
