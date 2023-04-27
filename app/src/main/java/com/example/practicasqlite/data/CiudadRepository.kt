@@ -7,7 +7,9 @@ import com.example.practicasqlite.domain.model.CiudadItem
 import com.example.practicasqlite.domain.model.toDomain
 import javax.inject.Inject
 
-class CiudadRepository @Inject constructor (private val ciudadDao: CiudadDao) {//Injectamos directamente del dao y preparaciin de la clase
+class CiudadRepository @Inject constructor (
+    private val ciudadDao: CiudadDao
+    ) {//Injectamos directamente del dao y preparaciin de la clase
 
     suspend fun getAllCitiesFromDB(): List<CiudadItem> {
         val response: List<CiudadEntity> = ciudadDao.getAllCity()
@@ -18,5 +20,4 @@ class CiudadRepository @Inject constructor (private val ciudadDao: CiudadDao) {/
     suspend fun insertCity(ciudad:CiudadEntity){
         ciudadDao.insertCity(ciudad)
     }
-
 }

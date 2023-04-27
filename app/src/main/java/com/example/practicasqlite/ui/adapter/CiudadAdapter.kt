@@ -10,8 +10,7 @@ import com.example.practicasqlite.R
 import com.example.practicasqlite.domain.model.CiudadItem
 
 class CiudadAdapter (var context: Context,
-                     var listCity: List<CiudadItem>,
-                     var vista: View): RecyclerView.Adapter<CiudadAdapter.MyHolder>() {
+                     var listCity: List<CiudadItem>): RecyclerView.Adapter<CiudadAdapter.MyHolder>() {
     inner class MyHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         var cId: TextView

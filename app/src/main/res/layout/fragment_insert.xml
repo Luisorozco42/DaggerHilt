@@ -5,10 +5,55 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.InsertFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Soy el fragmento de Insert" />
+        android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:text="Agregar una Ciudad"
+            android:textStyle="bold"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:fontFamily="sans-serif-black"
+            android:hint="Ciudad"
+            tools:text="Managua"
+            android:inputType="textCapSentences"
+            android:layout_margin="16dp"
+            android:textSize="18sp"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/etPopulation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:fontFamily="sans-serif-black"
+            android:hint="Poblacion"
+            tools:text="9000"
+            android:inputType="number"
+            android:layout_margin="16dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textAlignment="center"/>
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Agregar "
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
 </FrameLayout>

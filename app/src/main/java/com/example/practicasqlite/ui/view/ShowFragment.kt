@@ -42,6 +42,6 @@ class ShowFragment : Fragment() {
     fun setAdapter(lista: List<CiudadItem>){//
         recyclerView = bindingShow.rvCiudad
         recyclerView.layoutManager = LinearLayoutManager(requireActivity())
-        recyclerView.adapter = CiudadAdapter(requireActivity(), lista, bindingShow.root)
+        recyclerView.adapter = CiudadAdapter(requireActivity(), lista)
     }
 }

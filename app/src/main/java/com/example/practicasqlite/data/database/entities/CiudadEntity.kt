@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.practicasqlite.domain.model.CiudadItem
+import com.example.practicasqlite.domain.model.InsertCiudad
 
 @Entity("tblCiudad")
 data class CiudadEntity(
@@ -14,3 +15,4 @@ data class CiudadEntity(
 )
 
 fun CiudadItem.toDatabase() = CiudadEntity(nombre = nombre, poblacion = poblacion)
+fun InsertCiudad.toDatabase() = CiudadEntity(nombre = nombre, poblacion = poblacion)
